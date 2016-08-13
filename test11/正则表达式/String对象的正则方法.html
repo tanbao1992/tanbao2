@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>String对象的正则方法</title>
+	</head>
+	<body>
+		<!--
+			js中的String对象有四个支持正则表达式的方法
+			1：match(pattern)返回匹配到的所有字串的数组
+			2:replace(pattern,replacement)用replacement来替换匹配到的字符
+			3:split(pattern)返回按照pattern模式对字符串进行拆分的结果
+			4,：search(pattern)返回按照pattern模式匹配到的字串的位置
+			
+		-->
+		
+		<script type="text/javascript">
+			
+			/*
+			 * match()
+			 * 
+			 * var pattern = /Box/ig
+			
+			var str = 'this is a box! this is a Box!'
+			
+			alert(str.match(pattern))
+			
+			console.log(str.match(pattern))
+			 */
+			
+			
+			/*replace()
+			 * 
+			 * 非全局替换的只是第一个符合匹配模式的字串
+			 * var pattern = /Box/i
+			
+			var str = 'this is a box! this is a Box!'
+			
+			alert(str.replace(pattern,'tom'))
+			 */
+			
+			
+			/*
+			 * 全局模式都可替换
+			 *  var pattern = /Box/ig
+			
+			var str = 'this is a box! this is a Box!'
+			
+			alert(str.replace(pattern,'tom'))
+			 */
+			
+			
+			/*split()
+			 * 
+			 * var pattern = /!/g
+			
+			var str = 'this is a box! this is a box!'
+			
+			alert(str.split(pattern))
+			
+			console.log(str.split(pattern))
+			 */
+			
+			/*search()
+			 * 
+			 * var pattern = /!/g
+			
+			var str = 'this is a box! this is a box!'
+			
+			alert(str.search(pattern))
+			 */
+			
+			
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+

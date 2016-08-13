@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>noConflict</title>
+		<script src="JQuery.js"></script>
+	</head>
+	<body>
+		<!--
+			众做周知，jQuery使用$符号代替jQuery对象，但是这样的话就相当于对$符号进行了绑架，导致其他一些插件或是框架无法很好地实现自己的功能，因为有很多框架也会使用$符号，比如：backbone等。所以jQuery考虑到这一点，就推出了noConflict方法来解决该问题。
+			conflict：冲突。
+		-->
+		<div>这是一个div</div>
+		
+		<script type="text/javascript">
+			
+			$('div').css('color','red')
+			
+			//jQuery('div').css('font-size','30px')
+			
+			//noConflict()可以解除jQuery对$符号的绑定,解除之后后边就不能使用$符号了
+			//$.noConflict()
+			
+			//下边会报错
+			//$('div').css('background-color','orange')
+			
+			//jQuery可以正常工作
+			jQuery('div').css('font-size','40px')
+			
+			//$.noConflict()还可以返回一个jQuery对象
+			
+			var j = $.noConflict()
+			
+			j('div').css('background-color','blue')
+			
+			
+		</script>
+	</body>
+</html>

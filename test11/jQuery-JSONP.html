@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsonp</title>
+		<script src="JQuery.js"></script>
+	</head>
+	<body>
+		<!--
+			JSONP : JavaScript Object Notation With Padding，他是json的一种使用模式，可以实现跨域读取数据。
+			默认情况是不允许跨域读取数据，因为浏览器具有同源策略。
+			同源策略：ip 域名  端口号都要一致才能进行数据的读取。
+		-->
+		<button onclick="myClick()">点击试试</button>
+		
+		<button onclick="myJQueryClick()">点我也试试</button>
+		
+		<img src="https://www.baidu.com/img/bd_logo1.png"/>
+		
+		<script type="text/javascript">
+			
+			//声明一个回调函数
+			function myCallback(data){
+				
+				alert(data)
+			}
+			
+			
+			function myClick(){
+				
+				//该请求会被禁止。因为同源策略要求只有在同一个ip地址下 同一个域名 以及同一个端口号的访问才会被允许。
+				//当前页面的ip以及端口号和http://www.baidu.com不一致，所以会被禁止。
+				//但是对于一些html中特殊标签，是可以实现跨域数据读取。这些特殊标签就是带有src属性的标签，比如script，img等
+				$.get({
+					url:'https://www.baidu.com/img/bd_logo1.png',
+					success:function(data,status,xhr){
+						
+						alert(data)
+					}
+					
+				})
+				
+				
+			}
+			
+			/*
+			 * jQuery提供了跨域读取数据的方式，就是通过
+			 * $.getJSON()方法
+			 */
+			function myJQueryClick(){
+				
+				$.getJSON('http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=?',function(data){
+					
+					alert(data)
+				})
+			}
+		</script>
+		
+		<!--由于src属性可以跨域读取数据，所以可以使用src加载跨域数据，然后服务器可以设置一个callback参数，用来实现数据的回调-->
+		<script src="http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=myCallback"></script>
+		
+	</body>
+</html>

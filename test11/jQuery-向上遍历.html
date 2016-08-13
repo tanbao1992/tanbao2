@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery-向上遍历</title>
+		<script src="JQuery.js"></script>
+		<style type="text/css">
+			#container *{
+				
+				display: block;
+				border: 5px solid lightblue;
+				color: lightblue;
+				margin: 15px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<section>
+				span的曾祖父元素
+				<ul>
+					span的祖父元素
+					<li>
+						span的父元素
+						<span>span</span>
+					</li>
+				</ul>
+			</section>
+			<p>=======================</p>
+			<section>
+				span的曾祖父元素
+				<ul>
+					span的祖父元素
+					<li>
+						span的父元素
+						<span>span</span>
+					</li>
+				</ul>
+			</section>
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				/*
+				 * parent()获取指定元素的父元素
+				 */
+				$('span').parent().css({'border-color':'red','color':'red'})
+				
+				/*
+				 * parents()获取指定元素的所有上层元素（即所有父元素）
+				 */
+				$('span').parents().css({'border-color':'red','color':'red'})
+				
+				/*
+				 *  parents(selector)获取指定元素的所有上层元素（即所有父元素）中符合selector的那一些
+				 */
+				
+				$('span').parents('ul').css({'border-color':'orange','color':'orange'})
+				
+				/*
+				 * parentsUntil()是用来获取指定元素的父元素开始到某一个上层元素(不包含该上层元素本身)为止的所有父元素
+				 */
+				$('span').parentsUntil('ul').css({'border-color':'blue','color':'blue'})
+			})
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

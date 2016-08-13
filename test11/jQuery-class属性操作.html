@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>class属性操作</title>
+		<script src="JQuery.js"></script>
+		<style type="text/css">
+			.color{
+				
+				color: red;
+			}
+			.font{
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>这是一个p标签</p>
+		<div>这是一个div</div>
+		<button>点我试试</button>
+		<script type="text/javascript">
+		
+			$(document).ready(function(){
+				
+				$('button').click(function(){
+					
+					/*
+					 * addClass()往元素添加一个或多个class属性,多个class属性用空格隔开
+					 */
+					//$('div').addClass('color')
+					
+					//$('p').addClass('color font')
+					
+					/*
+					 * removeClass()略。。。。
+					 */
+					
+					/*
+					 * toggleClass()切换class样式
+					 */ 
+					$('p').toggleClass('color font')
+				})
+				
+				
+			})
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

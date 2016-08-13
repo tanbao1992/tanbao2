@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据属性</title>
+		<script src="JQuery.js"></script>
+	</head>
+	<body>
+		<p data-name = "p1">这是一个p标签</p>
+		<div>这是一个div</div>
+		<script type="text/javascript">
+		
+			var p1 = document.querySelector('p')
+			
+			p1.dataset.name = 'xxx'
+			
+			alert(p1.dataset.name)
+			
+			//页可以通过以下方式设置元素的属性
+			p1['id'] = 'p1-id'
+			
+			p1.id = 'ooo'
+			
+			/*
+			 * 对标签元素的属性操作分为两种
+			 * 1，把标签元素作为一个对象，通过打点或是[key]的方式，但是有的元素属性不支持这样，比如<a href='xxx'>的href属性。
+			 * 2，通过setAttribute和getAttribute
+			 */
+			
+			//不能通过这种方式给data-*属性设置值
+			p1['data-name'] = '智游'
+			
+			//data-*设置属性值为一个对象,不能保存对象数据，会丢失
+			p1.dataset.name = {
+				
+				name:'roy',
+				age:28
+			}
+			
+			alert(p1.dataset.name.age)
+			
+			//但是我们可以这样,通过这种方式自定义属性(不推荐),在查看元素看不到，但是可以实现保存对象数据
+			p1.user = {
+				
+				name:'roy',
+				age:28
+			}
+			alert(p1.user.name)
+			
+			/*
+			 * 使用jQuery设置data-*,可以设置成功，但是在查看元素看不到,并且可以保存对象数据
+			 */
+			
+			//data-name = '智游教育'
+			$('div').data('name','智游教育')
+			
+			alert($('div').data('name'))
+			
+			//data-user = {}
+			$('div').data('user',{
+				
+				userName:'roy',
+				age:28,
+				city:'zz'
+				
+			})
+			
+			alert($('div').data('user').city)
+			
+		</script>
+	</body>
+</html>
+
+
+
+

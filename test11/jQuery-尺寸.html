@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>尺寸</title>
+		<script src="JQuery.js"></script>
+		<style type="text/css">
+			div{
+				width: 500px;
+				height: 500px;
+				background-color: red;
+				padding: 20px;
+				border: 10px solid orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				/*
+				 * width()和height()主要是用来获取元素的content的尺寸，不包括border padding 和margin
+				 */
+				
+				alert($('div').width())
+				
+				/*
+				 * innerWidth(),innerHeight()获取内部尺寸 包括 content + padding
+				 */
+				
+				alert($('div').innerWidth())
+				
+				/*
+				 * outerWidth(),outerHeight()获取 包括 content + padding + border
+				 */
+				
+				alert($('div').outerWidth())
+			})
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

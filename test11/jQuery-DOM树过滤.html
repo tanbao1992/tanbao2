@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM树过滤</title>
+		<script src="JQuery.js"></script>
+	</head>
+	<body>
+		<div>这是第一个div</div>
+		<div>这是第2个div</div>
+		<div>这是第3个div</div>
+		
+		<div>
+			<p>这是div中的一个p标签</p>
+		</div>
+		
+		<div class="lastdiv">
+			<p>这是另一个div中的一个p标签</p>
+		</div>
+		
+		<div class="lastdiv xxx">
+			<p>这是又另一个div中的一个p标签</p>
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				/*
+				 * 筛选指定元素的第一个
+				 */
+				$('div').first().css('color','red').text('xxxxxx')
+				
+				/*
+				 * 筛选的是第一个符合该选择器的标签
+				 */
+				$('div p').first().css('color','blue')
+				
+				/*
+				 * last()同理，略。。。
+				 */
+				
+				
+				/*
+				 * eq(index)获取所有指定的标签中，索引号为index的那一个。equal：相等
+				 */
+				$('div').eq(1).css('background-color','orange')
+				
+				
+				/*
+				 * filter()过滤所有筛选的标签中，指定的那一些
+				 */
+				
+				$('div').filter('.lastdiv').css('background-color','palegreen')
+				
+				
+				/*
+				 * not()过滤除了指定的那一些
+				 */
+					$('div').not('.lastdiv').css('background-color','plum')
+			})
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+

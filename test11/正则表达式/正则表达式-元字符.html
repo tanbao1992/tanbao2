@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元字符</title>
+	</head>
+	<body>
+		<!--
+			在正则表达式中，有一些特殊的字符，每一个字符都带有不同含义，这些字符就是元字符。
+		-->
+		<script type="text/javascript">
+			
+			/*
+			 * 点字符'.'可以匹配除了换行之外任意单个字符
+			 * 
+			 * var pattern = /goog.e/
+			
+			var str  = 'google'
+			
+			alert(pattern.test(str))
+			 */
+			
+			/*
+			 * 星号字符'*', X*代表匹配X子串0次或是多次
+			 * var pattern = /go*gle/
+			
+			var str = 'ggle'
+			
+			alert(pattern.test(str))
+			 */
+			
+			/*
+			 * 加号字符'+',X+代表匹配X子串1次或是多次
+			 * var pattern = /go+gle/
+			
+			var str = 'ggogle'
+			
+			alert(pattern.test(str))
+			 */
+			
+			
+			/*
+			var pattern = /go{1,3}/
+			
+			var str = 'gooooooooo'
+			
+			alert(pattern.test(str))
+			*/
+			
+			
+			//用来匹配小写字母，[0-9]和[A-Z]同理
+			var pattern = /[a-z]oogle/
+			
+			var str = 'Google'
+			
+			//alert(pattern.test(str))
+			
+			//前边加上脱字符^，之后代表取反
+			var pattern = /[^a-z]oogle/
+			
+			var str = '7oogle'
+			
+			//alert(pattern.test(str))
+			
+			
+			//^在最前边，代表必须以指定的字符开头
+			//$在最后边代表必须以指定字符结尾
+			var pattern = /^[a-z]oogle[0-9]$/
+			
+			var str = 'google6'
+			
+			alert(pattern.test(str))
+			
+			/*
+			 * \w : 代表数字 字母 和下划线 即和[a-zA-Z0-9_]等价
+			 * 
+			 * \W : 代表和\w相反。即[^a-zA-Z0-9_]
+			 * 
+			 * \d ： 代表数字.即和[0-9]等价
+			 * 
+			 * \D：和\d 相反.即[^0-9]
+			 */
+			
+			
+		</script>
+	</body>
+</html>

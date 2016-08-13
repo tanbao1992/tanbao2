@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>向下遍历</title>
+		<script src="JQuery.js"></script>
+		<style type="text/css">
+			#container *{
+				
+				display: block;
+				border: 5px solid lightblue;
+				color: lightblue;
+				margin: 15px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<section>
+				section
+				<ul>
+					section的子元素
+					<li>
+						section的孙子元素
+						<span>section的重孙元素</span>
+					</li>
+				</ul>
+				<div>=====================</div>
+				<ul id="ul2">
+					section的子元素
+					<li>
+						section的孙子元素
+						<span>section的重孙元素</span>
+					</li>
+				</ul>
+			</section>	
+		</div>
+		
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+				
+				/*
+				 * childen()获取指定元素的直接子元素
+				 */
+				$('section').children().css({'border-color':'red','color':'red'})
+				
+				/*
+				 * childen(selector)获取指定元素的直接子元素，并且该子元素符合selector
+				 */
+				$('section').children('#ul2').css({'border-color':'orange','color':'orange'})
+				
+				/*
+				 * find('*')找到指定元素的所有后代元素
+				 */
+				$('section').find('*').css({'border-color':'blue','color':'blue'})
+				
+				/*
+				 * find(selector)找到所有符合selector的后代元素
+				 */
+				$('section').find('li').css({'border-color':'red','color':'red'})
+				
+				
+				
+			})
+		</script>
+	</body>
+</html>
